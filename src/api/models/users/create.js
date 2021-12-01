@@ -10,9 +10,4 @@ const createUser = async (userData) => {
   });
 };
 
-const findUserEmail = async (email) => {
-  const findEmail = await (await connection()).collection('users').findOne({ email });
-  return findEmail;
-};
-
-module.exports = { createUser, findUserEmail };
+module.exports = { createUser };
