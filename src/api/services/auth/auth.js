@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const findUser = require('../../models/users/findUser');
+const status = require('../../httpStatusCodes');
 
 const API_SECRET = 'segredo';
 
@@ -14,11 +15,19 @@ const validateToken = async (token) => {
   try {
     const decoded = jwt.verify(token, API_SECRET);
     const { email, password } = decoded.data;
+
     const user = await findUser(email, password);
-    return user;
+
+    if (user) {
+      const { _id } = user;
+      return { _id };
+    }
+
+    return false;
   } catch (err) {
-    console.log(err);
-    return null;
+    err.message = 'Internal server error';
+    err.code = status.internalServerError;
+    return err;
   }
 };
 
