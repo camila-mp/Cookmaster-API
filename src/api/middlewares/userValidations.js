@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const status = require('../httpStatusCodes');
 
 // fonte do regex do email: http://zparacha.com/validate-email-address-using-javascript-regular-expression
 
@@ -9,7 +10,9 @@ const validateUserData = ({ name, email, password }) => {
     password: Joi.string().required(),
   }).validate({ name, email, password });
 
-  if (validation.error) return { err: { message: 'Invalid entries. Try again.' } };
+  if (validation.error) {
+    return { err: { message: 'Invalid entries. Try again.', code: status.badRequest } };
+  } 
   return true;
 };
 

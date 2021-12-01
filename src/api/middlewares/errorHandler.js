@@ -1,12 +1,9 @@
-const { internalServerError, badRequest, conflict } = require('../httpStatusCodes');
+const { internalServerError } = require('../httpStatusCodes');
 
 module.exports = (err, _req, res, _next) => {
-  let status = internalServerError;
-  if (err.message === 'Invalid entries. Try again.') status = badRequest;
-  if (err.message === 'Email already registered') status = conflict;
-  if (status === internalServerError) console.log(err);
-
+  if (err.code === internalServerError) console.log(err);
+  console.log(err);
   return res
-    .status(status)
+    .status(err.code || 500)
     .json({ message: err.message });
 };
