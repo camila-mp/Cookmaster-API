@@ -11,7 +11,7 @@ module.exports = async (req, res, next) => {
 
     const { _id, role } = userLogin;
     
-    const token = genToken(_id, email, role);
+    const token = genToken({ _id, email, role });
 
     return res.status(status.ok).json({ token });
   } catch (err) {

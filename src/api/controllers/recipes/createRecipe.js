@@ -9,7 +9,6 @@ module.exports = async (req, res, next) => {
     const newRecipe = await create({ name, ingredients, preparation, userId });
 
     if (newRecipe.err) return next(newRecipe.err);
-    
     return res.status(status.created).json(newRecipe);
   } catch (err) {
     err.message = 'Internal server error';

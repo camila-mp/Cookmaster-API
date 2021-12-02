@@ -1,14 +1,15 @@
 const { validateToken } = require('../services/auth/auth');
 const status = require('../httpStatusCodes');
 
-module.exports = async (req, next) => {
-  const { token } = req.headers.authorization;
+module.exports = async (req, _res, next) => {
+  const token = req.headers.authorization;
 
-  const tokenValidation = validateToken(token);
+  const tokenValidation = await validateToken(token);
 
-  if (tokenValidation) {
-    req.userId = tokenValidation;
-    return next();
+  if (tokenValidation.message) {
+    return next({ message: 'jwt malformed', code: status.unauthorized });
   } 
-  return { err: { message: 'jwt malformed', code: status.unauthorized } };
+  
+  req.userId = tokenValidation;
+  return next();
 };
