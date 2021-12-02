@@ -20,7 +20,7 @@ const validateToken = async (token) => {
 
     if (user) {
       const { _id } = user;
-      return { _id };
+      return _id;
     }
 
     return false;
