@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { findUser } = require('../../models/users/findUser');
+const findUser = require('../../models/users/findUser');
 const status = require('../../httpStatusCodes');
 
 const API_SECRET = 'segredo';

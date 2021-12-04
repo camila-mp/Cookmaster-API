@@ -1,4 +1,4 @@
-const { findUser } = require('../../models/users/findUser');
+const findUser = require('../../models/users/findUser');
 const { validateEmail } = require('../../middlewares/loginValidation');
 const status = require('../../httpStatusCodes');
 

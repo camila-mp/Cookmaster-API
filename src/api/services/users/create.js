@@ -1,5 +1,5 @@
 const { createUser } = require('../../models/users/create');
-const { findUser } = require('../../models/users/findUser');
+const findUser = require('../../models/users/findUser');
 const { validateUserData } = require('../../middlewares/userValidations');
 const status = require('../../httpStatusCodes');
 
