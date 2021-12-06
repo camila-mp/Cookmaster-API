@@ -6,7 +6,6 @@ module.exports = async (id) => {
   
   if (validation.err) return validation;
   const recipe = await getById(id);
-  console.log(recipe);
 
   return recipe;
 };
