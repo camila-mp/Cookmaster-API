@@ -1,47 +1,48 @@
 # Boas vindas ao repositório do projeto Cookmaster!
 
-# Habilidades
+# Tecnologias e ferramentas utilizadas
 
-- Entender o que há por dentro de um token de autenticação;
+`JavaScript`\
+`MongoDB`\
+`Node.js`\
+`express`\
+`dotenv`\
+`joi`\
+`jsonwebtoken`\
+`nodemon`\
+`multer`
 
-- Gerar tokens a partir de informações como login e senha;
+## Sobre a aplicação
 
-- Autenticar rotas do Express, usando o token JWT;
-
-- Fazer upload de arquivos em APIs REST;
-
-- Salvar arquivos no servidor através de uma API REST;
-
-- Consultar arquivos do servidor através de uma api REST.
-
-- Realizar testes de integração
-
----
-
-## Desenvolvimento
-
-Você vai desenvolver todas as camadas da aplicação (Models, Service e Controllers) a partir do seu código no projeto cookmaster.
-
-Através dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados: Criação, Leitura, Atualização e Exclusão (ou `CRUD`, para as pessoas mais íntimas 😜).
-
-Para realizar qualquer tipo de alteração no banco de dados (como cadastro, edição ou exclusão de receitas) será necessário autenticar-se. Além disso, as pessoas usuárias devem poder ser clientes ou administradores. Pessoas clientes apenas poderão disparar ações nas receitas que ele mesmo criou. Já uma pessoa administradora pode disparar qualquer ação em qualquer receita.
-
-A autenticação deverá ser feita via `JWT`.
-
-O código para cadastro de pessoas usuárias deve ser criado por você utilizando os conhecimentos adquiridos nesse bloco.
-
-Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload de arquivos fornecido pelo `multer`.
+Projeto desenvolvido individualmente durante o curso da Trybe, no módulo de Back-End. Todo o código da API foi desenvolvido por mim seguindo o padrão arquitetura MSC (Model, Service, Controller). Nesta API o usuário passa por cadastro e autenticação antes de ter acesso ao banco de dados. Uma vez autenticado, o usuário pode realizar operações C.R.U.D. em um banco de dados MongoDB que armazena receitas. Cada usuário pode realizar ações apenas nas receitas que ele mesmo criou.
 
 ---
 
-##  Os endpoints seguem o padrão REST
+# Como rodar o projeto na sua máquina
 
-- Usar os verbos HTTP adequados para cada operação.
+### Pré-requisitos
 
-- Agrupar e padronizar as URL em cada recurso.
-
-- Garantir que os endpoints sempre retornem uma resposta, havendo sucesso ou não.
-
-- Retornar os códigos de status corretos para cada caso.
+Ter instalado o MongoDB e algum cliente HTTP (como o Insomnia).
+<a href="https://docs.mongodb.com/manual/administration/install-community/">Link MongoDB</a>.
+<a href="https://insomnia.rest/download">Link Insomnia</a>.
 
 ---
+
+Abra o seu Visual Studio Code e aperte ctrl + J ou abra um terminal e siga as instruções a seguir.
+
+1. Clone o repositório com o comando:
+`git clone git@github.com:camila-mp/cookmaster-API.git`
+
+2. Entre na pasta clonada com o comando:
+`cd Cookmaster-API`
+
+3. Instale as dependências com o comando:
+`npm install` ou `yarn install`
+
+4. Inicialize o servidor da API localmente com o comando:
+`npm start` ou `yarn start`
+
+5. Inicie o MongoDB com o comando:
+`sudo service mongod start`
+
+6. Abra o software Insomnia, ou outro cliente HTTP de sua preferência, e teste os endpoints.
