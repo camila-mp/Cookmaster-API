@@ -12,15 +12,16 @@
 `nodemon`\
 `multer`
 
-## Sobre a aplicação
+# Sobre a aplicação
 
-Projeto desenvolvido individualmente durante o curso da Trybe, no módulo de Back-End. Todo o código da API foi desenvolvido por mim seguindo o padrão arquitetura MSC (Model, Service, Controller). Nesta API o usuário passa por cadastro e autenticação antes de ter acesso ao banco de dados. Uma vez autenticado, o usuário pode realizar operações C.R.U.D. em um banco de dados MongoDB que armazena receitas. Cada usuário pode realizar ações apenas nas receitas que ele mesmo criou.
+Projeto desenvolvido individualmente durante o curso da Trybe, no módulo de Back-End. Todo o código da API foi desenvolvido por mim seguindo o padrão arquitetura MSC (Model, Service, Controller). 
 
----
+Nesta API existe um processo de cadastro e autenticação de usuários, antes do acesso ao banco de dados. Uma vez autenticado, o usuário pode realizar operações C.R.U.D. em um banco de dados MongoDB que armazena informações sobre receitas. Cada usuário pode realizar ações apenas nas receitas que ele mesmo criou.
+
 
 # Como rodar o projeto na sua máquina
 
-### Pré-requisitos
+## Pré-requisitos
 
 Ter instalado o MongoDB e algum cliente HTTP (como o Insomnia).
 <a href="https://docs.mongodb.com/manual/administration/install-community/">Link MongoDB</a>.
