@@ -21,13 +21,10 @@ Nesta API existe um processo de cadastro e autenticação de usuários, antes do
 
 # Como rodar o projeto na sua máquina
 
-## Pré-requisitos
-
+**Pré-requisitos:**
 Ter instalado o MongoDB e algum cliente HTTP (como o Insomnia).
 <a href="https://docs.mongodb.com/manual/administration/install-community/">Link MongoDB</a>.
 <a href="https://insomnia.rest/download">Link Insomnia</a>.
-
----
 
 Abra o seu Visual Studio Code e aperte ctrl + J ou abra um terminal e siga as instruções a seguir.
 
