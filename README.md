@@ -28,11 +28,11 @@ Em todas as rotas onde há envio de dados na requisição são feitas verificaç
 
 ## Cadastro de usuários (`/users`)
 
-- O método HTTP é POST;
+- O método HTTP é POST.
 
-- Para criar um usuário através desta API são necessarios os campos: Email, Senha, Nome e Role. Todos são obrigatórios, exceto Role. O Role deve ser user;
+- Para criar um usuário através desta API são necessarios os campos: Email, Senha, Nome e Role. Todos são obrigatórios, exceto Role. O Role deve ser user.
 
-- O Email deve ser único;
+- O Email deve ser único.
 
 - O body da requisição deve estar no seguinte formato:
 
@@ -45,11 +45,11 @@ Em todas as rotas onde há envio de dados na requisição são feitas verificaç
   ```
 ## Login (`/login`)
 
-- O método HTTP é POST;
+- O método HTTP é POST.
 
-- A rota recebe os campos Email e Senha e esses campos são validados no banco de dados. Os dois campos são obrigatórios;
+- A rota recebe os campos Email e Senha e esses campos são validados no banco de dados. Os dois campos são obrigatórios.
 
-- O token gerado com o JWT é retornado quando o Login é bem sucedido;
+- O token gerado com o JWT é retornado quando o Login é bem sucedido.
 
 - O body da requisição deve estar no seguinte formato:
 
@@ -62,13 +62,13 @@ Em todas as rotas onde há envio de dados na requisição são feitas verificaç
 
 ## Cadastro ou criação receitas (`/recipes`)
 
-- O método HTTP é POST;
+- O método HTTP é POST.
 
-- A receita só pode ser criada caso o usuário esteja logado;
+- A receita só pode ser criada caso o usuário esteja logado.
 
-- No banco, a receita deve ter os campos Nome, Ingredientes, Modo de preparo, URL da imagem e Id do Autor. Nome, Ingredientes e Modo de preparo são obrigatórios;
+- No banco, a receita deve ter os campos Nome, Ingredientes, Modo de preparo, URL da imagem e Id do Autor. Nome, Ingredientes e Modo de preparo são obrigatórios.
 
-- O URL da imagem será preenchido por outro endpoint e o Id é gerado automaticamente pelo MongoDB;
+- O URL da imagem será preenchido por outro endpoint e o Id é gerado automaticamente pelo MongoDB.
 
 - A requisição deve ter o body no seguinte formato:
 
@@ -83,25 +83,27 @@ Em todas as rotas onde há envio de dados na requisição são feitas verificaç
 
 ## Leitura de todas as receitas (`/recipes`)
 
-- O método HTTP é GET;
+- O método HTTP é GET.
 
-- A rota pode ser acessada por usuários logados ou não;
+- A rota pode ser acessada por usuários logados ou não.
 
 - Não é necessário enviar body na requisição.
 
 ## Leitura de uma receita específica (`/recipes/:id`)
 
-- O método HTTP é GET;
+- O método HTTP é GET.
 
-- A rota pode ser acessada por usuários logados ou não;
+- A rota pode ser acessada por usuários logados ou não.
 
 - Um id válido deve ser inserido no endereço desta rota.
 
 ## Edição de uma receita (`/recipes/:id`)
 
-- O método HTTP é PUT;
+- O método HTTP é PUT.
 
-- A receita só pode ser editada pelo usuário logado que criou essa receita;
+- A receita só pode ser editada pelo usuário logado que criou essa receita.
+
+- Um id válido deve ser inserido no endereço desta rota.
 
 - O corpo da requisição deve receber o seguinte formato:
 
@@ -117,9 +119,11 @@ Em todas as rotas onde há envio de dados na requisição são feitas verificaç
 
 - O método HTTP é DELETE;
 
-- A receita só pode ser excluída caso o usuário esteja logado;
+- A receita só pode ser excluída caso o usuário esteja logado.
 
-- A receita só pode ser excluída caso seja de autoria do usuário logado;
+- A receita só pode ser excluída caso seja de autoria do usuário logado.
+
+- Um id válido deve ser inserido no endereço desta rota.
 
 ## Adição de imagem .jpg à receita (`/recipes/:id/image/`)
 
@@ -127,7 +131,7 @@ Em todas as rotas onde há envio de dados na requisição são feitas verificaç
 
 - A imagem deve ser lida do campo `image`.
 
-- O endpoint deve aceitar requisições no formato `multipart/form-data`.
+- A requisição deve estar no formato `multipart/form-data`.
 
 - A receita só pode ser atualizada caso o usuário esteja logado e seja o criador da receita.
 
